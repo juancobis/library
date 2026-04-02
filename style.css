@@ -3,6 +3,8 @@
   --color-secondary: #932210;
   --color-button: #c5283d;
   --color-text: #ffffff;
+
+  --radius: 20px;
 }
 
 .container {
@@ -41,13 +43,59 @@ main > div:first-child {
   margin-bottom: 50px;
 }
 
-.btn-new-book {
-  background-color: var(--color-button);
+.btn {
   border: none;
   padding: 8px 24px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+.btn-new-book {
+  background-color: var(--color-button);
 
   color: var(--color-text);
+}
+
+.popup {
+  background-color: var(--color-secondary);
+  padding: 36px;
+  border-radius: var(--radius);
+}
+
+#form-add-book {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#form-add-book div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#form-add-book label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+#form-add-book input {
+  width: 250px;
+  background-color: #878787;
+  padding: 4px 16px;
+  border: none;
+  border-radius: var(--radius);
+  color: var(--color-text);
+}
+
+input[type='number'] {
+}
+
+.btn-add-book {
+  margin-top: 16px;
+  width: max-content;
+  align-self: center;
+  background-color: #aaaaaa;
 }

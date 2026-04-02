@@ -19,7 +19,28 @@
 
       <main>
         <div>
-          <button class="btn-new-book">New Book</button>
+          <button class="btn btn-new-book">New Book</button>
+
+          <div class="popup">
+            <form id="form-add-book">
+              <div>
+                <label for="input-book-title">Title</label>
+                <input type="text" id="input-book-title" placeholder="The Wealth of Nations" required>
+              </div>
+
+              <div>
+                <label for="input-book-title">Author</label>
+                <input type="text" id="input-book-author" placeholder="Adam Smith" required>
+              </div>
+
+              <div>
+                <label for="input-book-title">Year</label>
+                <input type="number" id="input-book-year" placeholder="1776" required>
+              </div>
+
+              <button class="btn btn-add-book">Add book</button>
+            </form>
+          </div>
         </div>
 
         <div class="library">
