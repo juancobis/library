@@ -1,0 +1,53 @@
+:root {
+  --color-primary: #481d24;
+  --color-secondary: #932210;
+  --color-button: #c5283d;
+  --color-text: #ffffff;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+
+  grid-template-rows: max-content 1fr;
+  color: var(--color-text);
+}
+
+header {
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  font-size: 1.2rem;
+}
+
+header > svg {
+  width: 64px;
+  fill: var(--color-text);
+}
+
+main {
+  background-color: var(--color-primary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > div:first-child {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.btn-new-book {
+  background-color: var(--color-button);
+  border: none;
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  color: var(--color-text);
+}
