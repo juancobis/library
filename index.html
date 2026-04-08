@@ -11,44 +11,55 @@
       <header>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <title>library</title>
-          <path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" />
+          <path
+            d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z"
+          />
         </svg>
 
         <h1>Library</h1>
       </header>
 
       <main>
-        <div>
-          <button class="btn btn-new-book">New Book</button>
-
-          <div class="popup">
-            <form id="form-add-book">
-              <div>
-                <label for="input-book-title">Title</label>
-                <input type="text" id="input-book-title" placeholder="The Wealth of Nations" required>
-              </div>
-
-              <div>
-                <label for="input-book-title">Author</label>
-                <input type="text" id="input-book-author" placeholder="Adam Smith" required>
-              </div>
-
-              <div>
-                <label for="input-book-title">Year</label>
-                <input type="number" id="input-book-year" placeholder="1776" required>
-              </div>
-
-              <button class="btn btn-add-book">Add book</button>
-            </form>
+        <form>
+          <div>
+            <label for="input-book-title">Title</label>
+            <input
+              type="text"
+              id="input-book-title"
+              placeholder="The Wealth of Nations"
+              required
+            />
           </div>
-        </div>
+
+          <div>
+            <label for="input-book-author">Author</label>
+            <input
+              type="text"
+              id="input-book-author"
+              placeholder="Adam Smith"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="input-book-year">Year</label>
+            <input
+              type="number"
+              id="input-book-year"
+              placeholder="1776"
+              required
+            />
+          </div>
+
+          <button class="btn-add-book">Add book</button>
+        </form>
 
         <div class="library">
           <h2>My Library</h2>
 
           <div class="books"></div>
         </div>
-      </div>
       </main>
+    </div>
   </body>
 </html>

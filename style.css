@@ -4,6 +4,7 @@
   --color-button: #c5283d;
   --color-text: #ffffff;
 
+  --color-bg-input: #878787;
   --radius: 20px;
 }
 
@@ -16,13 +17,13 @@
 }
 
 header {
-  background-color: var(--color-secondary);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-secondary);
+  font-size: 1.2rem;
   gap: 16px;
   padding: 16px 0;
-  font-size: 1.2rem;
 }
 
 header > svg {
@@ -31,19 +32,14 @@ header > svg {
 }
 
 main {
-  background-color: var(--color-primary);
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--color-primary);
+  padding: 48px;
 }
 
-main > div:first-child {
-  margin-top: 100px;
-  margin-bottom: 50px;
-}
-
-.btn {
+button {
   border: none;
   padding: 8px 24px;
   border-radius: var(--radius);
@@ -51,51 +47,51 @@ main > div:first-child {
   font-weight: 600;
 }
 
-.btn-new-book {
-  background-color: var(--color-button);
-
-  color: var(--color-text);
-}
-
-.popup {
-  background-color: var(--color-secondary);
-  padding: 36px;
-  border-radius: var(--radius);
-}
-
-#form-add-book {
+form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius);
+  padding: 24px;
   gap: 24px;
+  margin: 48px 0;
 }
 
-#form-add-book div {
+form div {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
 }
 
-#form-add-book label {
+form label {
   font-size: 1.2rem;
   font-weight: 600;
   margin-left: 4px;
 }
 
-#form-add-book input {
-  width: 250px;
-  background-color: #878787;
+input {
+  background-color: var(--color-bg-input);
   padding: 4px 16px;
   border: none;
   border-radius: var(--radius);
   color: var(--color-text);
-}
 
-input[type='number'] {
+  &:focus {
+    background-color: var(--color-primary);
+  }
 }
 
 .btn-add-book {
-  margin-top: 16px;
-  width: max-content;
-  align-self: center;
+  align-self: flex-end;
   background-color: #aaaaaa;
+  transition: 0.125s all;
+  margin-top: 16px;
+
+  &:focus {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    outline: 1px solid var(--color-text);
+  }
 }
