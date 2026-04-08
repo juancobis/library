@@ -43,7 +43,7 @@ button {
   border: none;
   padding: 8px 24px;
   border-radius: var(--radius);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -124,6 +124,7 @@ input[type='number'] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: #000000;
   background-color: #aaaaaa;
   border: 5px solid var(--color-secondary);
@@ -131,4 +132,17 @@ input[type='number'] {
   padding: 96px 24px;
   height: calc(var(--width) + var(--width) * 0.3);
   gap: 16px;
+}
+
+.card button {
+  font-size: 0.9rem;
+  padding: 6px 12px;
+}
+
+.card p:last-of-type {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.9rem;
 }

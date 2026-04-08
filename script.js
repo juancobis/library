@@ -6,12 +6,13 @@ const form = document.querySelector('form')
 const divBooks = document.querySelector('.books')
 
 class Book {
-  constructor(title, author, year, pages) {
+  constructor(title, author, year, pages, status) {
     this.id = crypto.randomUUID()
     this.title = title
     this.author = author
     this.year = year
     this.pages = pages
+    this.status = status
   }
 }
 
@@ -48,6 +49,7 @@ const renderBooks = () => {
       <small>${book.pages}</small>
     `
 
+    bookCard.dataset.id = book.id
     bookCard.classList.add('card')
     divBooks.appendChild(bookCard)
   })
