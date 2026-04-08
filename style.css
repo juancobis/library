@@ -99,29 +99,32 @@ input {
 
 .library {
   text-align: center;
+  width: 100%;
 }
 
 .books {
-  display: flex;
-  flex-wrap: wrap;
+  --width: 250px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--width));
+  justify-content: center;
   margin-top: 32px;
   gap: 32px;
 }
 
 .card {
-  --width: 250px;
-
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: #000000;
   background-color: #aaaaaa;
   border: 5px solid var(--color-secondary);
   border-radius: var(--radius);
   padding: 96px 24px;
-  width: var(--width);
   height: calc(var(--width) + var(--width) * 0.3);
   gap: 16px;
 }
 
 .book {
+  
 }
