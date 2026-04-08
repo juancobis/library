@@ -41,9 +41,21 @@ form.addEventListener('submit', (e) => {
 })
 
 const renderBooks = () => {
-  myLibrary.forEach((book) => {
+  divBooks.innerHTML = ''
 
-    
+  myLibrary.forEach((book) => {
+    const bookCard = document.createElement('div')
+
+    bookCard.innerHTML = `
+      <h3>${book.title}</h3>
+      <p>${book.author}</p>
+      <p>${book.year}</p>
+    `
+
+    bookCard.classList.add('card', 'book')
+
+    divBooks.appendChild(bookCard)
+
     console.log(book)
   })
 }
