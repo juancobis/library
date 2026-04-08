@@ -84,16 +84,24 @@ input {
   }
 }
 
+input[type='number'] {
+  width: 96px;
+}
+
 #btn-add-book {
   align-self: flex-end;
   background-color: #aaaaaa;
   transition: 0.125s all;
   margin-top: 16px;
 
+  &:hover {
+    background-color: var(--color-bg-input);
+  }
+
   &:focus {
     background-color: var(--color-primary);
     color: var(--color-text);
-    outline: 1px solid var(--color-text);
+    outline: 2px solid var(--color-text);
   }
 }
 
@@ -123,8 +131,4 @@ input {
   padding: 96px 24px;
   height: calc(var(--width) + var(--width) * 0.3);
   gap: 16px;
-}
-
-.book {
-  
 }
