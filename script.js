@@ -2,22 +2,24 @@ const inputBookTitle = document.querySelector('#input-book-title')
 const inputBookAuthor = document.querySelector('#input-book-author')
 const inputBookYear = document.querySelector('#input-book-year')
 const inputBookPages = document.querySelector('#input-book-pages')
+const btnsRemoveBook = document.querySelectorAll('.btn-rmv-book')
+const btnsStatusBook = document.querySelectorAll('.btn-status-book')
 const form = document.querySelector('form')
 const divBooks = document.querySelector('.books')
 
 class Book {
-  constructor(title, author, year, pages, status) {
+  constructor(title, author, year, pages) {
     this.id = crypto.randomUUID()
     this.title = title
     this.author = author
     this.year = year
     this.pages = pages
-    this.status = status
+    this.status = 'to-read'
   }
 }
 
-const myLibrary = []
-myLibrary.push(new Book('1984', 'George Orwell', 1949))
+let myLibrary = []
+myLibrary.push(new Book('1984', 'George Orwell', 1949, 130))
 
 const addBookToLibrary = (title, author, year, pages) => {
   if (
@@ -65,4 +67,16 @@ form.addEventListener('submit', (e) => {
 
   addBookToLibrary(title, author, year, pages)
   renderBooks()
+})
+
+divBooks.addEventListener('click', (e) => {
+  const isRemoveBookButton = e.target.classList.contains('btn-rmv-book')
+  const isChangeStatusButton = e.target.classList.contains('btn-status-book')
+
+  if (isRemoveBookButton) {
+    const cardID = e.target.parentElement.dataset.id
+    myLibrary = myLibrary.filter(book => book.id !== cardID)
+    renderBooks()
+  }
+  console.log(e)
 })
