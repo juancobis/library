@@ -2,8 +2,6 @@ const inputBookTitle = document.querySelector('#input-book-title')
 const inputBookAuthor = document.querySelector('#input-book-author')
 const inputBookYear = document.querySelector('#input-book-year')
 const inputBookPages = document.querySelector('#input-book-pages')
-const btnsRemoveBook = document.querySelectorAll('.btn-rmv-book')
-const btnsStatusBook = document.querySelectorAll('.btn-status-book')
 const form = document.querySelector('form')
 const divBooks = document.querySelector('.books')
 
@@ -14,7 +12,21 @@ class Book {
     this.author = author
     this.year = year
     this.pages = pages
-    this.status = 'to-read'
+    this.status = 'To read'
+  }
+
+  changeStatus() {
+    switch (this.status) {
+      case 'To read':
+        this.status = 'Reading'
+        break
+      case 'Reading':
+        this.status = 'Read'
+        break
+      case 'Read':
+        this.status = 'To read'
+        break
+    }
   }
 }
 
@@ -47,7 +59,10 @@ const renderBooks = () => {
       <h3>${book.title}</h3>
       <p>${book.author}</p>
       <p>${book.year}</p>
+      <p>${book.status}</p>
 
+      <button class="btn-status-book">Change Status</button>
+      <button class="btn-rmv-book">Remove</button>
       <small>${book.pages}</small>
     `
 
@@ -74,8 +89,15 @@ divBooks.addEventListener('click', (e) => {
   const isChangeStatusButton = e.target.classList.contains('btn-status-book')
 
   if (isRemoveBookButton) {
-    const cardID = e.target.parentElement.dataset.id
-    myLibrary = myLibrary.filter(book => book.id !== cardID)
+    const bookID = e.target.parentElement.dataset.id
+    myLibrary = myLibrary.filter((book) => book.id !== bookID)
+
+    renderBooks()
+  } else if (isChangeStatusButton) {
+    const bookID = e.target.parentElement.dataset.id
+    const book = myLibrary.find((book) => book.id === bookID)
+
+    book.changeStatus()
     renderBooks()
   }
   console.log(e)
