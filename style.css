@@ -136,13 +136,13 @@ input[type='number'] {
 
 .card button {
   font-size: 0.9rem;
-  padding: 6px 12px;
 }
 
-.card p:last-of-type {
+.card .tag-status {
   background-color: var(--color-secondary);
   color: var(--color-text);
-  padding: 4px 8px;
+  padding: 2px 16px;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
 }

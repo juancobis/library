@@ -31,7 +31,7 @@ class Book {
 }
 
 let myLibrary = []
-myLibrary.push(new Book('1984', 'George Orwell', 1949, 130))
+myLibrary.push(new Book('1984', 'George Orwell', 1949, 328))
 
 const addBookToLibrary = (title, author, year, pages) => {
   if (
@@ -59,10 +59,10 @@ const renderBooks = () => {
       <h3>${book.title}</h3>
       <p>${book.author}</p>
       <p>${book.year}</p>
-      <p>${book.status}</p>
 
-      <button class="btn-status-book">Change Status</button>
-      <button class="btn-rmv-book">Remove</button>
+      <div class="tag-status">${book.status}</div>
+
+      <button class="btn-rmv">Remove</button>
       <small>${book.pages}</small>
     `
 
@@ -85,20 +85,24 @@ form.addEventListener('submit', (e) => {
 })
 
 divBooks.addEventListener('click', (e) => {
-  const isRemoveBookButton = e.target.classList.contains('btn-rmv-book')
-  const isChangeStatusButton = e.target.classList.contains('btn-status-book')
+  const isRemoveBookButton = e.target.classList.contains('btn-rmv')
+  const isChangeStatusButton = e.target.classList.contains('tag-status')
 
   if (isRemoveBookButton) {
-    const bookID = e.target.parentElement.dataset.id
-    myLibrary = myLibrary.filter((book) => book.id !== bookID)
+    const bookCard = e.target.parentElement
+    const bookCardID = bookCard.dataset.id
+    myLibrary = myLibrary.filter((book) => book.id !== bookCardID)
 
     renderBooks()
   } else if (isChangeStatusButton) {
-    const bookID = e.target.parentElement.dataset.id
-    const book = myLibrary.find((book) => book.id === bookID)
+    const bookCard = e.target.parentElement
+    const bookCardID = bookCard.dataset.id
+    const book = myLibrary.find((book) => book.id === bookCardID)
 
     book.changeStatus()
     renderBooks()
   }
   console.log(e)
 })
+
+renderBooks()
