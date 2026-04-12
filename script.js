@@ -30,7 +30,7 @@ class Book {
   }
 }
 
-let myLibrary = [new Book('1984', 'George Orwell', 1949, 328)]
+let myLibrary = [new Book('Title', 'Author', 'Year', '№ Pages'), new Book('1984', 'George Orwell', 1949, 328)]
 
 const addBookToLibrary = (title, author, year, pages) => {
   if (
@@ -115,7 +115,6 @@ divBooks.addEventListener('click', (e) => {
     book.changeStatus()
     renderBooks()
   }
-  console.log(e)
 })
 
 renderBooks()
