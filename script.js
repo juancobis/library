@@ -30,8 +30,7 @@ class Book {
   }
 }
 
-let myLibrary = []
-myLibrary.push(new Book('1984', 'George Orwell', 1949, 328))
+let myLibrary = [new Book('1984', 'George Orwell', 1949, 328)]
 
 const addBookToLibrary = (title, author, year, pages) => {
   if (
@@ -60,14 +59,28 @@ const renderBooks = () => {
       <p>${book.author}</p>
       <p>${book.year}</p>
 
-      <div class="tag-status">${book.status}</div>
+      <button class="tag-status">${book.status}</button>
 
       <button class="btn-rmv">Remove</button>
       <small>${book.pages}</small>
     `
-
+    
     bookCard.dataset.id = book.id
     bookCard.classList.add('card')
+
+    const statusTag = bookCard.querySelector('.tag-status')
+    switch (book.status) {
+      case 'To read':
+        statusTag.style.backgroundColor = '#932210'
+        break
+      case 'Reading':
+        statusTag.style.backgroundColor= '#009dff'
+        break
+      case 'Read':
+        statusTag.style.backgroundColor = '#008c4d'
+        break
+    }
+
     divBooks.appendChild(bookCard)
   })
 }

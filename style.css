@@ -45,6 +45,12 @@ button {
   border-radius: var(--radius);
   font-size: 1rem;
   font-weight: 600;
+  transition: 0.25s;
+
+  &:hover {
+    scale: 1.05;
+    cursor: pointer;
+  }
 }
 
 form {
@@ -98,7 +104,7 @@ input[type='number'] {
     background-color: var(--color-bg-input);
   }
 
-  &:focus {
+  &:active {
     background-color: var(--color-primary);
     color: var(--color-text);
     outline: 2px solid var(--color-text);
@@ -139,10 +145,15 @@ input[type='number'] {
 }
 
 .card .tag-status {
-  background-color: var(--color-secondary);
   color: var(--color-text);
   padding: 2px 16px;
   border-radius: 20px;
   font-size: 0.8rem;
   margin-bottom: 16px;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.card small {
+  font-weight: 500;
 }
